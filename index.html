@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ronak Prajapat | Full-Stack Developer &amp; Software Engineer</title>
+  
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description" content="Portfolio of Ronak Prajapat — Full-Stack Developer & Computer Science Engineering student at JECRC University. Architecting high-performance web applications, AI workflows, and cloud systems.">
+  <meta name="keywords" content="Ronak Prajapat, Full-Stack Developer, Software Engineer, JECRC University, Jaipur, React, Node.js, Web Development, Portfolio">
+  <meta name="author" content="Ronak Prajapat">
+  <meta name="theme-color" content="#08090d">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ronak Prajapat | Full-Stack Developer &amp; Software Engineer">
+  <meta property="og:description" content="Explore flagship projects, tech stack, and interactive terminal portfolio of Ronak Prajapat.">
+  <meta property="og:image" content="assets/images/avatar.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="assets/images/logo.jpg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Ambient Lights & Interactive Canvas -->
+  <canvas id="particle-canvas"></canvas>
+  <div class="ambient-orb ambient-orb-1"></div>
+  <div class="ambient-orb ambient-orb-2"></div>
+  <div class="ambient-orb ambient-orb-3"></div>
+
+  <!-- Navigation Bar -->
+  <header class="site-header" id="site-header">
+    <div class="container nav-container">
+      <a href="#home" class="brand-logo" id="brand-link" aria-label="Ronak Prajapat Home">
+        <div class="brand-icon-box">
+          <img src="assets/images/logo.jpg" alt="RP Monogram Logo">
+        </div>
+        <div class="brand-name">
+          <span class="brand-title">Ronak Prajapat</span>
+          <span class="brand-sub">&lt;portfolio /&gt;</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#terminal" class="nav-link">Terminal</a></li>
+          <li><a href="#experience" class="nav-link">Timeline</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <!-- Audio Synth Toggle -->
+        <button class="icon-btn" id="sound-toggle-btn" title="Toggle Synthesizer Sound FX" aria-label="Toggle Sound Effects">
+          <i class="fa-solid fa-volume-xmark" id="sound-icon"></i>
+        </button>
+
+        <!-- Theme Toggle -->
+        <button class="icon-btn" id="theme-toggle-btn" title="Toggle Theme" aria-label="Toggle Color Theme">
+          <i class="fa-solid fa-sun" id="theme-icon"></i>
+        </button>
+
+        <!-- Resume CTA -->
+        <a href="#resume-modal" class="nav-cta-btn" id="nav-resume-btn" onclick="openResumeModal(event)">
+          <i class="fa-solid fa-file-pdf"></i>
+          <span>Resume</span>
+        </a>
+
+        <!-- Mobile Drawer Toggle -->
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Mobile Navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobile-drawer">
+    <a href="#about" class="nav-link">About Me</a>
+    <a href="#skills" class="nav-link">Skills &amp; Technologies</a>
+    <a href="#projects" class="nav-link">Featured Projects</a>
+    <a href="#terminal" class="nav-link">Interactive Terminal</a>
+    <a href="#experience" class="nav-link">Education &amp; Experience</a>
+    <a href="#contact" class="nav-link">Contact Me</a>
+    <div style="margin-top: auto; padding-bottom: 20px;">
+      <a href="#resume-modal" class="btn btn-primary" style="width: 100%; justify-content: center;" onclick="openResumeModal(event)">
+        <i class="fa-solid fa-file-pdf"></i> View &amp; Download Resume
+      </a>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main>
+    <!-- HERO SECTION -->
+    <section class="section hero-section" id="home">
+      <div class="container">
+        <div class="hero-grid">
+          
+          <!-- Hero Left Column -->
+          <div class="hero-text-content">
+            <div class="hero-badge-pill">
+              <span class="status-dot"></span>
+              <span>Available for Internships &amp; Engineering Roles</span>
+            </div>
+
+            <h1 class="hero-title">
+              Hi, I'm <span class="gradient-text">Ronak Prajapat</span><br>
+              <span class="typewriter-wrapper" id="typewriter">Full-Stack Developer</span>
+            </h1>
+
+            <p class="hero-description">
+              Computer Science &amp; Engineering undergraduate at <strong>JECRC University</strong>. 
+              I design and engineer high-performance web applications, scalable backend systems, 
+              and intelligent user interfaces with clean architecture and modern developer tooling.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn-primary" id="hero-view-work">
+                <i class="fa-solid fa-code"></i>
+                <span>Explore Projects</span>
+              </a>
+              <a href="#contact" class="btn btn-secondary" id="hero-contact-btn">
+                <i class="fa-solid fa-paper-plane"></i>
+                <span>Get In Touch</span>
+              </a>
+            </div>
+
+            <!-- Social Links -->
+            <div class="hero-socials">
+              <a href="https://github.com/ronak26bcon0690-tech" target="_blank" rel="noopener noreferrer" class="social-pill" title="GitHub Profile">
+                <i class="fa-brands fa-github"></i>
+                <span>GitHub</span>
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-pill" title="LinkedIn Profile">
+                <i class="fa-brands fa-linkedin-in"></i>
+                <span>LinkedIn</span>
+              </a>
+              <a href="mailto:ronak.26bcon0690@jecrcu.edu.in" class="social-pill" title="Email Ronak">
+                <i class="fa-solid fa-envelope"></i>
+                <span>Email</span>
+              </a>
+              <a href="#terminal" class="social-pill" title="Interactive Terminal">
+                <i class="fa-solid fa-terminal"></i>
+                <span>CLI</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Hero Right Column (3D Interactive Tilt Card) -->
+          <div class="hero-visual-wrapper">
+            <!-- Floating badges -->
+            <div class="floating-tech-chip chip-1">
+              <i class="fa-brands fa-react" style="color: #00d8ff; font-size: 1.2rem;"></i>
+              <span>Next.js &amp; React</span>
+            </div>
+            <div class="floating-tech-chip chip-2">
+              <i class="fa-brands fa-node-js" style="color: #68a063; font-size: 1.2rem;"></i>
+              <span>Node &amp; Express</span>
+            </div>
+            <div class="floating-tech-chip chip-3">
+              <i class="fa-solid fa-microchip" style="color: #a855f7; font-size: 1.2rem;"></i>
+              <span>AI Agents &amp; Cloud</span>
+            </div>
+
+            <div class="hero-card-3d" id="hero-3d-card">
+              <div class="hero-card-inner">
+                <img src="assets/images/avatar.jpg" alt="Ronak Prajapat - Software Engineer" class="hero-portrait-img">
+                <div class="hero-portrait-overlay">
+                  <span class="hero-badge-title">Ronak Prajapat</span>
+                  <span class="hero-badge-subtitle">B.Tech CSE • JECRC University</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- METRICS STRIP -->
+    <section class="stats-strip">
+      <div class="container">
+        <div class="glass-card stats-grid">
+          <div class="stat-item">
+            <span class="stat-number">15+</span>
+            <span class="stat-label">Projects Completed</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">500+</span>
+            <span class="stat-label">Git Commits Shipped</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">99.9%</span>
+            <span class="stat-label">Clean Code &amp; Reliability</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">4+</span>
+            <span class="stat-label">Hackathons &amp; Events</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag"><i class="fa-solid fa-user-astronaut"></i> Background</div>
+          <h2 class="section-title">Engineered with Passion, Driven by <span class="gradient-text">Curiosity</span></h2>
+          <p class="section-subtitle">Bridging theoretical computer science principles with pragmatic real-world engineering.</p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Text Story -->
+          <div class="about-text-content">
+            <p>
+              I am a Computer Science and Engineering student at <strong>JECRC University, Jaipur</strong>, 
+              focusing on full-stack web architectures, distributed systems, and modern AI application engineering.
+            </p>
+            <p>
+              My coding journey started with a fascination for how logic turns into interactive software. Today, I build 
+              production-ready full-stack applications with responsive glassmorphism interfaces, event-driven backends, 
+              and robust REST &amp; WebSocket APIs.
+            </p>
+
+            <div class="about-highlights-grid">
+              <div class="highlight-box">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <h4>Academic Excellence</h4>
+                <p>B.Tech CSE at JECRC University with core focus on DSA, DBMS, and OS.</p>
+              </div>
+              <div class="highlight-box">
+                <i class="fa-solid fa-bolt"></i>
+                <h4>Fast Performance</h4>
+                <p>Obsessed with sub-100ms response times, clean code, and zero bloat.</p>
+              </div>
+              <div class="highlight-box">
+                <i class="fa-solid fa-cubes"></i>
+                <h4>Modern Architecture</h4>
+                <p>Modular component designs, scalable schemas, and microservice APIs.</p>
+              </div>
+              <div class="highlight-box">
+                <i class="fa-solid fa-handshake-angle"></i>
+                <h4>Continuous Learning</h4>
+                <p>Active open-source contributor, hackathon competitor, and pair-programmer.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Code Bio Card -->
+          <div class="code-bio-card">
+            <div class="code-header">
+              <div class="code-dots">
+                <span class="code-dot dot-red"></span>
+                <span class="code-dot dot-yellow"></span>
+                <span class="code-dot dot-green"></span>
+              </div>
+              <span class="code-file-name">ronak_prajapat.json</span>
+              <button class="code-action-btn" id="copy-bio-btn" title="Copy JSON Bio">
+                <i class="fa-regular fa-clone"></i> Copy
+              </button>
+            </div>
+            <div class="code-body" id="bio-code-content">
+<pre><code>{
+  <span class="code-key">"name"</span>: <span class="code-string">"Ronak Prajapat"</span>,
+  <span class="code-key">"university"</span>: <span class="code-string">"JECRC University, Jaipur"</span>,
+  <span class="code-key">"degree"</span>: <span class="code-string">"B.Tech in Computer Science & Engineering"</span>,
+  <span class="code-key">"location"</span>: <span class="code-string">"Jaipur, Rajasthan, India"</span>,
+  <span class="code-key">"email"</span>: <span class="code-string">"ronak.26bcon0690@jecrcu.edu.in"</span>,
+  <span class="code-key">"focusAreas"</span>: [
+    <span class="code-string">"Full-Stack Web Development"</span>,
+    <span class="code-string">"AI Agents & LLM Integration"</span>,
+    <span class="code-string">"Algorithms & Data Structures"</span>,
+    <span class="code-string">"Scalable Cloud Backend"</span>
+  ],
+  <span class="code-key">"currentlyBuilding"</span>: <span class="code-string">"Decentralized real-time tools"</span>,
+  <span class="code-key">"openToWork"</span>: <span class="code-bool">true</span>,
+  <span class="code-key">"coffeePerDay"</span>: <span class="code-num">2</span>
+}</code></pre>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag"><i class="fa-solid fa-layer-group"></i> Ecosystem</div>
+          <h2 class="section-title">Technical <span class="gradient-text">Mastery</span> &amp; Toolkit</h2>
+          <p class="section-subtitle">A curated collection of frameworks, runtimes, databases, and core computer science capabilities.</p>
+        </div>
+
+        <!-- Filter tabs -->
+        <div class="skills-filter-nav">
+          <button class="filter-tab active" data-filter="all">All Technologies</button>
+          <button class="filter-tab" data-filter="frontend">Frontend &amp; UI</button>
+          <button class="filter-tab" data-filter="backend">Backend &amp; APIs</button>
+          <button class="filter-tab" data-filter="cloud">Cloud &amp; Databases</button>
+          <button class="filter-tab" data-filter="fundamentals">Core CS</button>
+        </div>
+
+        <!-- Skills Grid -->
+        <div class="skills-grid" id="skills-grid-container">
+
+          <!-- React / Next -->
+          <div class="glass-card skill-card" data-category="frontend">
+            <div class="skill-header">
+              <div class="skill-identity">
+                <div class="skill-icon"><i class="fa-brands fa-react"></i></div>
+                <div>
+                  <div class="skill-name">React &amp; Next.js</div>
+                  <div class="skill-category">Frontend</div>
+                </div>
+              </div>
+              <span class="skill-level-badge">92%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-level="92%"></div>
+            </div>
+            <p class="skill-desc">Component architecture, hooks, SSR/SSG, state management, and modern client routing.</p>
+          </div>
+
+          <!-- JavaScript ES6+ -->
+          <div class="glass-card skill-card" data-category="frontend">
+            <div class="skill-header">
+              <div class="skill-identity">
+                <div class="skill-icon"><i class="fa-brands fa-js"></i></div>
+                <div>
+                  <div class="skill-name">JavaScript (ES6+)</div>
+                  <div class="skill-category">Language</div>
+                </div>
+              </div>
+              <span class="skill-level-badge">95%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-level="95%"></div>
+            </div>
+            <p class="skill-desc">Asynchronous programming, closures, promises, event loop, Canvas API, and DOM manipulation.</p>
+          </div>
+
+          <!-- HTML5 & Modern CSS -->
+          <div class="glass-card skill-card" data-category="frontend">
+            <div class="skill-header">
+              <div class="skill-identity">
+                <div class="skill-icon"><i class="fa-brands fa-css3-alt"></i></div>
+                <div>
+                  <div class="skill-name">Modern CSS &amp; HTML5</div>
+                  <div class="skill-category">Design &amp; Layout</div>
+                </div>
+              </div>
+              <span class="skill-level-badge">96%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-level="96%"></div>
+            </div>
+            <p class="skill-desc">CSS Grid, Flexbox, custom design tokens, glassmorphism, responsive media queries, and keyframe animations.</p>
+          </div>
+
+          <!-- Node.js & Express -->
+          <div class="glass-card skill-card" data-category="backend">
+            <div class="skill-header">
+              <div class="skill-identity">
+                <div class="skill-icon"><i class="fa-brands fa-node-js"></i></div>
+                <div>
+                  <div class="skill-name">Node.js &amp; Express</div>
+                  <div class="skill-category">Backend</div>
+                </div>
+              </div>
+              <span class="skill-level-badge">90%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-level="90%"></div>
+            </div>
+            <p class="skill-desc">RESTful API design, authentication (JWT/OAuth), middleware pipelines, and event-driven architecture.</p>
+          </div>
+
+          <!-- Python -->
+          <div class="glass-card skill-card" data-category="backend">
+            <div class="skill-header">
+              <div class="skill-identity">
+                <div class="skill-icon"><i class="fa-brands fa-python"></i></div>
+                <div>
+                  <div class="skill-name">Python</div>
+                  <div class="skill-category">Backend &amp; AI</div>
+                </div>
+              </div>
+              <span class="skill-level-badge">88%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-level="88%"></div>
+            </div>
+            <p class="skill-desc">Scripting, automation, FastAPIs, data processing, and interfacing with machine learning models.</p>
+          </div>
+
+          <!-- MongoDB & PostgreSQL -->
+          <div class="glass-card skill-card" data-category="cloud">
+            <div class="skill-header">
+              <div class="skill-identity">
+                <div class="skill-icon"><i class="fa-solid fa-database"></i></div>
+                <div>
+                  <div class="skill-name">MongoDB &amp; PostgreSQL</div>
+                  <div class="skill-category">Databases</div>
+                </div>
+              </div>
+              <span class="skill-level-badge">87%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-level="87%"></div>
+            </div>
+            <p class="skill-desc">Relational &amp; document modeling, indexing, aggregation pipelines, ACID transactions, and query tuning.</p>
+          </div>
+
+          <!-- Git & GitHub -->
+          <div class="glass-card skill-card" data-category="cloud">
+            <div class="skill-header">
+              <div class="skill-identity">
+                <div class="skill-icon"><i class="fa-brands fa-git-alt"></i></div>
+                <div>
+                  <div class="skill-name">Git &amp; GitHub</div>
+                  <div class="skill-category">Version Control</div>
+                </div>
+              </div>
+              <span class="skill-level-badge">94%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-level="94%"></div>
+            </div>
+            <p class="skill-desc">Branching strategies, CI/CD actions, pull request workflows, merge conflict resolutions, and Git hooks.</p>
+          </div>
+
+          <!-- Data Structures & Algorithms -->
+          <div class="glass-card skill-card" data-category="fundamentals">
+            <div class="skill-header">
+              <div class="skill-identity">
+                <div class="skill-icon"><i class="fa-solid fa-network-wired"></i></div>
+                <div>
+                  <div class="skill-name">DSA &amp; Problem Solving</div>
+                  <div class="skill-category">CS Core</div>
+                </div>
+              </div>
+              <span class="skill-level-badge">91%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-level="91%"></div>
+            </div>
+            <p class="skill-desc">Trees, graphs, dynamic programming, heaps, greedy algorithms, and asymptotic complexity analysis.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECTS SECTION -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag"><i class="fa-solid fa-diagram-project"></i> Showcase</div>
+          <h2 class="section-title">Flagship <span class="gradient-text">Engineering</span> Projects</h2>
+          <p class="section-subtitle">Real-world applications crafted with attention to performance, security, and delightful user experiences.</p>
+        </div>
+
+        <div class="projects-grid">
+
+          <!-- Project 1: NexusAI -->
+          <article class="glass-card project-card">
+            <div class="project-media">
+              <img src="assets/images/project-nexus.jpg" alt="NexusAI Workspace Mockup" class="project-image">
+              <div class="project-overlay">
+                <span class="project-category-badge">Full-Stack • AI Agents</span>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">NexusAI — Autonomous Multi-Agent Workspace</h3>
+              <p class="project-description">
+                An intelligent multi-agent platform coordinating autonomous LLM agents to perform code synthesis, automated research, and real-time streaming data analysis.
+              </p>
+              <ul class="project-highlights-list">
+                <li><i class="fa-solid fa-check"></i> Sub-60ms streaming token completions via HTTP/2 SSE</li>
+                <li><i class="fa-solid fa-check"></i> Semantic document vector search with hybrid caching</li>
+                <li><i class="fa-solid fa-check"></i> Modular agent orchestrator supporting fallback models</li>
+              </ul>
+              <div class="project-tags">
+                <span class="project-tag">React</span>
+                <span class="project-tag">Next.js</span>
+                <span class="project-tag">Node.js</span>
+                <span class="project-tag">OpenAI</span>
+                <span class="project-tag">ChromaDB</span>
+              </div>
+              <div class="project-footer">
+                <button class="btn-case-study" data-project="nexus">
+                  <span>Architecture &amp; Specs</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+                <div class="project-links">
+                  <a href="https://github.com/ronak26bcon0690-tech/Portfolio" target="_blank" class="icon-btn" title="GitHub Source" aria-label="GitHub Repository">
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: DevPulse -->
+          <article class="glass-card project-card">
+            <div class="project-media">
+              <img src="assets/images/project-devpulse.jpg" alt="DevPulse Platform Mockup" class="project-image">
+              <div class="project-overlay">
+                <span class="project-category-badge">Web App • Real-Time Systems</span>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">DevPulse — Real-Time Developer Collaboration Hub</h3>
+              <p class="project-description">
+                A browser-based interactive coding hub with synchronized multi-cursor editing, live sandboxed code execution, and instant developer chat rooms.
+              </p>
+              <ul class="project-highlights-list">
+                <li><i class="fa-solid fa-check"></i> Conflict-free collaborative text editing using WebSockets</li>
+                <li><i class="fa-solid fa-check"></i> Isolated containerized code execution with 1.5s cold-starts</li>
+                <li><i class="fa-solid fa-check"></i> Integrated split-screen live preview and terminal</li>
+              </ul>
+              <div class="project-tags">
+                <span class="project-tag">Node.js</span>
+                <span class="project-tag">Monaco Editor</span>
+                <span class="project-tag">Socket.io</span>
+                <span class="project-tag">Docker</span>
+                <span class="project-tag">PostgreSQL</span>
+              </div>
+              <div class="project-footer">
+                <button class="btn-case-study" data-project="devpulse">
+                  <span>Architecture &amp; Specs</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+                <div class="project-links">
+                  <a href="https://github.com/ronak26bcon0690-tech/Portfolio" target="_blank" class="icon-btn" title="GitHub Source" aria-label="GitHub Repository">
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: CyberVault -->
+          <article class="glass-card project-card">
+            <div class="project-media">
+              <img src="assets/images/project-cybervault.jpg" alt="CyberVault Platform Mockup" class="project-image">
+              <div class="project-overlay">
+                <span class="project-category-badge">Security • Cryptography</span>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">CyberVault — Zero-Knowledge Cloud Storage</h3>
+              <p class="project-description">
+                High-security encrypted asset vault providing client-side AES-256-GCM chunked encryption before transmission, ensuring true zero-knowledge privacy.
+              </p>
+              <ul class="project-highlights-list">
+                <li><i class="fa-solid fa-check"></i> Web Workers offloading cryptographic hashing without UI lag</li>
+                <li><i class="fa-solid fa-check"></i> SHA-256 Merkle tree verification ensuring file integrity</li>
+                <li><i class="fa-solid fa-check"></i> Granular time-expiring zero-knowledge share links</li>
+              </ul>
+              <div class="project-tags">
+                <span class="project-tag">WebCrypto API</span>
+                <span class="project-tag">AES-256-GCM</span>
+                <span class="project-tag">TypeScript</span>
+                <span class="project-tag">AWS S3</span>
+                <span class="project-tag">MongoDB</span>
+              </div>
+              <div class="project-footer">
+                <button class="btn-case-study" data-project="cybervault">
+                  <span>Architecture &amp; Specs</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+                <div class="project-links">
+                  <a href="https://github.com/ronak26bcon0690-tech/Portfolio" target="_blank" class="icon-btn" title="GitHub Source" aria-label="GitHub Repository">
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4: AlgoVisualizer -->
+          <article class="glass-card project-card">
+            <div class="project-media">
+              <img src="assets/images/project-algovis.jpg" alt="AlgoVisualizer Mockup" class="project-image">
+              <div class="project-overlay">
+                <span class="project-category-badge">Algorithms • HTML5 Canvas</span>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">AlgoVisualizer — Graph &amp; Algorithm Simulator</h3>
+              <p class="project-description">
+                Interactive educational simulation playground rendering pathfinding (A*, Dijkstra), graph traversals, and dynamic sorting with real-time state step inspection.
+              </p>
+              <ul class="project-highlights-list">
+                <li><i class="fa-solid fa-check"></i> 60-120 FPS high-refresh canvas rendering engine</li>
+                <li><i class="fa-solid fa-check"></i> Interactive obstacle grid generator with weighted walls</li>
+                <li><i class="fa-solid fa-check"></i> Step-by-step state debugger with forward &amp; rewind controls</li>
+              </ul>
+              <div class="project-tags">
+                <span class="project-tag">Vanilla JS</span>
+                <span class="project-tag">HTML5 Canvas</span>
+                <span class="project-tag">CSS3</span>
+                <span class="project-tag">Graph Theory</span>
+              </div>
+              <div class="project-footer">
+                <button class="btn-case-study" data-project="algovis">
+                  <span>Architecture &amp; Specs</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+                <div class="project-links">
+                  <a href="https://github.com/ronak26bcon0690-tech/Portfolio" target="_blank" class="icon-btn" title="GitHub Source" aria-label="GitHub Repository">
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE IN-BROWSER TERMINAL -->
+    <section class="section" id="terminal">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag"><i class="fa-solid fa-terminal"></i> Developer Playground</div>
+          <h2 class="section-title">Interactive <span class="gradient-text">CLI Shell</span></h2>
+          <p class="section-subtitle">Prefer the command line? Query my background, tech stack, and secret commands directly in this embedded shell.</p>
+        </div>
+
+        <div class="terminal-wrapper">
+          <div class="terminal-box">
+            <div class="terminal-header">
+              <div class="code-dots">
+                <span class="code-dot dot-red"></span>
+                <span class="code-dot dot-yellow"></span>
+                <span class="code-dot dot-green"></span>
+              </div>
+              <div class="terminal-title">
+                <i class="fa-solid fa-terminal"></i> ronak@dev-station:~ (zsh)
+              </div>
+              <div style="font-size: 0.75rem; color: #64748b;">v2.6.0</div>
+            </div>
+            
+            <div class="terminal-body">
+              <div class="terminal-output" id="terminal-output">
+                <div class="terminal-line terminal-welcome">
+Welcome to Ronak Prajapat's interactive shell. Type <span class="terminal-cmd-hint">'help'</span> to see available commands.
+                </div>
+              </div>
+              <div class="terminal-input-row">
+                <span class="terminal-prompt">visitor@ronak-prajapat:~$</span>
+                <input type="text" id="terminal-input" class="terminal-input" placeholder="type 'help', 'skills', 'about', or 'theme light'..." autocomplete="off" spellcheck="false">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TIMELINE SECTION (EDUCATION & EXPERIENCE) -->
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag"><i class="fa-solid fa-timeline"></i> Journey</div>
+          <h2 class="section-title">Education &amp; <span class="gradient-text">Milestones</span></h2>
+          <p class="section-subtitle">Academic foundations, technical leadership, and engineering growth.</p>
+        </div>
+
+        <div class="timeline-container">
+
+          <!-- Item 1: JECRC University -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="glass-card timeline-card">
+              <span class="timeline-period">2024 — Present</span>
+              <h3 class="timeline-role">Bachelor of Technology (B.Tech) — Computer Science &amp; Engineering</h3>
+              <div class="timeline-institution">
+                <i class="fa-solid fa-building-columns"></i> JECRC University, Jaipur
+              </div>
+              <p class="timeline-details">
+                Pursuing rigorous foundational coursework in Computer Science, including Data Structures &amp; Algorithms, 
+                Object-Oriented Programming, Database Management Systems, Computer Networks, and Operating Systems.
+                Actively applying theory to build scalable open-source projects.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 2: Technical Club & Hackathons -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="glass-card timeline-card">
+              <span class="timeline-period">2025 — Present</span>
+              <h3 class="timeline-role">Technical Core Member &amp; Hackathon Competitor</h3>
+              <div class="timeline-institution">
+                <i class="fa-solid fa-laptop-code"></i> University Developer Community &amp; Tech Clubs
+              </div>
+              <p class="timeline-details">
+                Collaborated in cross-functional student teams to design and present software solutions at collegiate hackathons.
+                Mentored fellow freshmen on version control with Git, modern JavaScript conventions, and full-stack development.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 3: Open Source & Self-Directed Engineering -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="glass-card timeline-card">
+              <span class="timeline-period">2024 — Present</span>
+              <h3 class="timeline-role">Open Source Contributor &amp; Systems Builder</h3>
+              <div class="timeline-institution">
+                <i class="fa-brands fa-github"></i> Independent Developer
+              </div>
+              <p class="timeline-details">
+                Authored and shipped over 15 distinct web utilities, algorithmic visualizers, and decentralized prototypes. 
+                Regularly maintaining clean Git commits, unit test configurations, and modular architecture documentation.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS & ACCOLADES -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag"><i class="fa-solid fa-award"></i> Verification</div>
+          <h2 class="section-title">Certifications &amp; <span class="gradient-text">Recognitions</span></h2>
+          <p class="section-subtitle">Continuous professional upskilling and verified credentials.</p>
+        </div>
+
+        <div class="certs-grid">
+          <div class="glass-card cert-card">
+            <div class="cert-icon"><i class="fa-solid fa-certificate"></i></div>
+            <div class="cert-info">
+              <h4>Full-Stack Web Development</h4>
+              <div class="cert-issuer">Modern MERN &amp; Next.js Architecture</div>
+              <span class="cert-badge-tag">● Verified Credential</span>
+            </div>
+          </div>
+
+          <div class="glass-card cert-card">
+            <div class="cert-icon"><i class="fa-solid fa-brain"></i></div>
+            <div class="cert-info">
+              <h4>Data Structures &amp; Algorithms</h4>
+              <div class="cert-issuer">Problem Solving &amp; Optimization</div>
+              <span class="cert-badge-tag">● 100+ Problems Solved</span>
+            </div>
+          </div>
+
+          <div class="glass-card cert-card">
+            <div class="cert-icon"><i class="fa-solid fa-cloud"></i></div>
+            <div class="cert-info">
+              <h4>Cloud Computing Fundamentals</h4>
+              <div class="cert-issuer">AWS &amp; Distributed Architectures</div>
+              <span class="cert-badge-tag">● Certified</span>
+            </div>
+          </div>
+
+          <div class="glass-card cert-card">
+            <div class="cert-icon"><i class="fa-brands fa-python"></i></div>
+            <div class="cert-info">
+              <h4>Python for Modern Computing</h4>
+              <div class="cert-issuer">Backend, Scripting &amp; Data Analysis</div>
+              <span class="cert-badge-tag">● Certified</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag"><i class="fa-solid fa-envelope"></i> Get Connected</div>
+          <h2 class="section-title">Let's Build Something <span class="gradient-text">Extraordinary</span></h2>
+          <p class="section-subtitle">Have an internship opportunity, project collaboration, or exciting challenge? Reach out anytime!</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Left: Direct Info -->
+          <div class="glass-card contact-info-card">
+            <div>
+              <h3 style="font-family: var(--font-heading); font-size: 1.45rem; font-weight: 700; margin-bottom: 8px;">Direct Contact</h3>
+              <p style="color: var(--text-secondary); font-size: 0.95rem;">I am actively available for technical internships, hackathons, and software engineering roles.</p>
+            </div>
+
+            <div class="contact-channel">
+              <div class="channel-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div class="channel-details">
+                <h4>University &amp; Professional Email</h4>
+                <a href="mailto:ronak.26bcon0690@jecrcu.edu.in">ronak.26bcon0690@jecrcu.edu.in</a>
+                <div>
+                  <button class="copy-email-btn" id="copy-email-btn">
+                    <i class="fa-regular fa-copy"></i> Copy Address
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-channel">
+              <div class="channel-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="channel-details">
+                <h4>Location</h4>
+                <p>Jaipur, Rajasthan, India (IST / UTC+5:30)</p>
+              </div>
+            </div>
+
+            <div class="contact-channel">
+              <div class="channel-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+              <div class="channel-details">
+                <h4>Institution</h4>
+                <p>JECRC University • Department of CSE</p>
+              </div>
+            </div>
+
+            <div style="margin-top: auto; padding-top: 10px;">
+              <h4 style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em;">Social Channels</h4>
+              <div style="display: flex; gap: 12px;">
+                <a href="https://github.com/ronak26bcon0690-tech" target="_blank" class="icon-btn" title="GitHub" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://linkedin.com" target="_blank" class="icon-btn" title="LinkedIn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="mailto:ronak.26bcon0690@jecrcu.edu.in" class="icon-btn" title="Email" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Contact Form -->
+          <div class="glass-card contact-form-card">
+            <h3 style="font-family: var(--font-heading); font-size: 1.45rem; font-weight: 700; margin-bottom: 20px;">Send a Direct Message</h3>
+            
+            <form class="contact-form" id="contact-form">
+              <div class="form-group">
+                <label for="form-name" class="form-label">Your Name</label>
+                <input type="text" id="form-name" class="form-input" placeholder="e.g. Alex Smith" required>
+              </div>
+
+              <div class="form-group">
+                <label for="form-email" class="form-label">Your Email</label>
+                <input type="email" id="form-email" class="form-input" placeholder="e.g. alex@example.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="form-subject" class="form-label">Subject</label>
+                <input type="text" id="form-subject" class="form-input" placeholder="Internship Opportunity / Project Inquiry">
+              </div>
+
+              <div class="form-group">
+                <label for="form-message" class="form-label">Message</label>
+                <textarea id="form-message" class="form-textarea" placeholder="Tell me about your project, team, or opportunity..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="margin-top: 10px; width: 100%;">
+                <i class="fa-solid fa-paper-plane"></i>
+                <span>Send Message</span>
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- PROJECT ARCHITECTURE & CASE STUDY MODAL -->
+  <div class="modal-overlay" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-project-title">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 id="modal-project-title">Engineering Architecture &amp; Case Study</h3>
+        <button class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body" id="modal-dynamic-content">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- RESUME MODAL VIEWER -->
+  <div class="modal-overlay" id="resume-modal" role="dialog" aria-modal="true" aria-labelledby="resume-modal-title">
+    <div class="modal-container" style="max-width: 850px;">
+      <div class="modal-header">
+        <h3 id="resume-modal-title">Curriculum Vitae — Ronak Prajapat</h3>
+        <div style="display: flex; gap: 10px; align-items: center;">
+          <button class="btn btn-primary" onclick="window.print()" style="padding: 6px 14px; font-size: 0.8rem;">
+            <i class="fa-solid fa-print"></i> Print / Save PDF
+          </button>
+          <button class="modal-close-btn" onclick="closeResumeModal()" aria-label="Close resume modal">&times;</button>
+        </div>
+      </div>
+      <div class="modal-body" style="background: var(--bg-surface); font-family: var(--font-body); color: var(--text-primary); line-height: 1.6;">
+        
+        <!-- Printable Resume Preview -->
+        <div style="border-bottom: 2px solid var(--border-subtle); padding-bottom: 16px; margin-bottom: 16px;">
+          <h1 style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 800; color: var(--text-primary); margin-bottom: 4px;">Ronak Prajapat</h1>
+          <div style="font-family: var(--font-mono); font-size: 0.9rem; color: var(--accent-cyan); margin-bottom: 8px;">Full-Stack Developer &amp; Computer Science Engineer</div>
+          <div style="display: flex; flex-wrap: wrap; gap: 16px; font-size: 0.88rem; color: var(--text-secondary);">
+            <span><i class="fa-solid fa-envelope"></i> ronak.26bcon0690@jecrcu.edu.in</span>
+            <span><i class="fa-solid fa-location-dot"></i> Jaipur, India</span>
+            <span><i class="fa-brands fa-github"></i> github.com/ronak26bcon0690-tech</span>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 16px;">
+          <h3 style="font-family: var(--font-heading); font-size: 1.15rem; color: var(--accent-cyan); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.05em;">Professional Summary</h3>
+          <p style="font-size: 0.92rem; color: var(--text-secondary);">
+            Enthusiastic and results-driven Computer Science undergraduate at JECRC University with deep expertise in modern full-stack web applications, clean architecture, RESTful APIs, and algorithmic problem-solving. Proven track record of shipping production-grade web applications with low latency and engaging user interfaces.
+          </p>
+        </div>
+
+        <div style="margin-bottom: 16px;">
+          <h3 style="font-family: var(--font-heading); font-size: 1.15rem; color: var(--accent-cyan); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.05em;">Education</h3>
+          <div style="display: flex; justify-content: space-between; font-weight: 600;">
+            <span>Bachelor of Technology (B.Tech) — Computer Science &amp; Engineering</span>
+            <span style="font-family: var(--font-mono); color: var(--text-muted);">2024 — Present</span>
+          </div>
+          <div style="font-size: 0.9rem; color: var(--accent-indigo); margin-bottom: 4px;">JECRC University, Jaipur, Rajasthan</div>
+          <p style="font-size: 0.88rem; color: var(--text-secondary);">Key Coursework: Data Structures, Algorithms, Operating Systems, Database Management Systems, Computer Networks.</p>
+        </div>
+
+        <div style="margin-bottom: 16px;">
+          <h3 style="font-family: var(--font-heading); font-size: 1.15rem; color: var(--accent-cyan); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.05em;">Technical Skills</h3>
+          <div style="display: grid; grid-template-columns: 140px 1fr; gap: 8px; font-size: 0.9rem;">
+            <strong>Languages:</strong> <span>JavaScript (ES6+), Python, HTML5, CSS3, C/C++</span>
+            <strong>Web &amp; Frameworks:</strong> <span>React, Next.js, Node.js, Express, RESTful APIs, WebSockets</span>
+            <strong>Databases:</strong> <span>MongoDB, PostgreSQL, Redis, Firebase</span>
+            <strong>Tools &amp; DevOps:</strong> <span>Git, GitHub, Docker, Postman, Linux/Unix, Webpack/Vite</span>
+          </div>
+        </div>
+
+        <div>
+          <h3 style="font-family: var(--font-heading); font-size: 1.15rem; color: var(--accent-cyan); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.05em;">Selected Projects</h3>
+          <div style="margin-bottom: 10px;">
+            <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 0.95rem;">
+              <span>NexusAI — Autonomous Multi-Agent Workspace</span>
+              <span style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted);">React, Node.js, Vector Search</span>
+            </div>
+            <p style="font-size: 0.88rem; color: var(--text-secondary);">Engineered sub-60ms streaming LLM token completions with event-driven WebSockets and semantic vector memory.</p>
+          </div>
+          <div>
+            <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 0.95rem;">
+              <span>DevPulse — Real-Time Developer Collaboration Platform</span>
+              <span style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted);">Node.js, WebSockets, Docker</span>
+            </div>
+            <p style="font-size: 0.88rem; color: var(--text-secondary);">Designed zero-collision collaborative code editor with sandboxed execution containers and live developer rooms.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast-notification" id="toast-notification" role="status" aria-live="polite">
+    <i class="fa-solid fa-circle-check" style="color: var(--accent-cyan); font-size: 1.2rem;"></i>
+    <span id="toast-message">Message dispatched successfully!</span>
+  </div>
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <div class="brand-icon-box" style="width: 32px; height: 32px;">
+              <img src="assets/images/logo.jpg" alt="RP">
+            </div>
+            <span>Ronak Prajapat</span>
+          </div>
+          <p>Full-Stack Developer &amp; CSE Undergraduate at JECRC University, Jaipur. Building scalable, intuitive digital experiences.</p>
+        </div>
+
+        <div class="footer-meta-box">
+          <div class="jaipur-clock" id="jaipur-clock-box">
+            <i class="fa-regular fa-clock"></i>
+            <span id="jaipur-time">Loading IST...</span>
+          </div>
+          <div style="font-size: 0.8rem; color: var(--text-muted);">Jaipur Standard Time (UTC+5:30)</div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Ronak Prajapat. All rights reserved. Built with modern HTML5, CSS3, &amp; ES6.
+        </div>
+        <button class="back-to-top-btn" id="back-to-top" aria-label="Back to top of page">
+          <span>Back to Top</span>
+          <i class="fa-solid fa-arrow-up"></i>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+  <script>
+    function openResumeModal(e) {
+      if (e) e.preventDefault();
+      const modal = document.getElementById('resume-modal');
+      if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeResumeModal() {
+      const modal = document.getElementById('resume-modal');
+      if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+  </script>
+</body>
+</html>

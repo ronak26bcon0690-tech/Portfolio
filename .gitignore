@@ -1,0 +1,15 @@
+# Binaries & IDE files
+*.exe
+*.dll
+*.log
+.DS_Store
+Thumbs.db
+
+# Dependencies
+node_modules/
+dist/
+.cache/
+
+# Local Environment
+.env
+.env.local
